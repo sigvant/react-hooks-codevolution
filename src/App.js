@@ -1,7 +1,7 @@
 import './App.css';
-import CounterOne from './components/CounterOne';
+// import CounterOne from './components/CounterOne';
 import CounterThree from './components/CounterThree';
-import CounterTwo from './components/CounterTwo';
+// import CounterTwo from './components/CounterTwo';
 
 function App() {
   return (
