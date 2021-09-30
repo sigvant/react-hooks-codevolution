@@ -13,7 +13,7 @@ function IntervalHookCounter() {
         return () => {
             clearInterval(interval)
         }
-    }, [count])
+    }, [count, tick])
     // needs to be thought as an array that react need to watch for changes
     // empty array means 'ignore looking for changes'
 
