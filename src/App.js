@@ -1,14 +1,14 @@
 import './App.css';
-// import CounterOne from './components/CounterOne';
-import CounterThree from './components/CounterThree';
-// import CounterTwo from './components/CounterTwo';
+import CompA from './components/CompA';
+import CompB from './components/CompB';
+import CompC from './components/CompC';
 
 function App() {
   return (
     <div className="App">
-      {/* <CounterOne/> */}
-      {/* <CounterTwo/> */}
-      <CounterThree/>
+      <CompA/>
+      <CompB/>
+      <CompC/>
     </div>
   );
 }
