@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import Count from './Count'
 import Button from './Button'
 import Title from './Title'
@@ -7,13 +7,14 @@ function ParentComponent() {
     const [age, setAge] = useState(25)
     const [salary, setSalary] = useState(50000)
 
-    const incrementAge = () => {
+    const incrementAge = useCallback(() => {
         setAge(age + 1)
-    }
+    }, [age]) 
 
-    const incrementSalary = () => {
+    const incrementSalary = useCallback(() => {
         setSalary(salary + 1000)
-    }
+    }, [salary])
+    
     return (
         <div>
             <Title/>
@@ -26,5 +27,14 @@ function ParentComponent() {
         </div>
     )
 }
+
+// main issue here is that each interaction renders everything again, which is dumb for efficiency
+// by going to the component and wrapping the export with react.memo, we can prevent it from re rendering
+// if their props did not change
+
+// be careful with props inside the elements or methods, because it might cause something to rerender
+// when you don`t actually expects it to rerender
+
+
 
 export default ParentComponent
