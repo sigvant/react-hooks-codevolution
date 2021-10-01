@@ -17,8 +17,10 @@ function ParentComponent() {
     return (
         <div>
             <Title/>
-            <Count text='Age' count={age} />
+            <Count text='Age' count={age} /> 
+            {/* text and count are passed as props with the keys that are decons in the Count element */}
             <Button handleClick={incrementAge}>Increment Age</Button>
+            {/* here we are passing the method as props to the function, there, it will be decons and used */}
             <Count text='Salary' count={salary}/>
             <Button handleClick={incrementSalary}>Increment Salary</Button>            
         </div>
